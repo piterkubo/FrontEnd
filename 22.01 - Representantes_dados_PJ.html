@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JS boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+
+    <!-- Boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+
+
+    <!-- Javascript -->
+    <script src="/Alteração Cadastral/jsPJ/mask_cep.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_cep_pj.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_cnpj.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_data.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/ddi.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/ddd.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_tel.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_estado_cidade_pj.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/pais.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_atividade_economica.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/upload-arquivos.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/progressbar.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_porcentagem.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask.moeda.js"defer></script>
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="/Alteração Cadastral/css/style.css">
+    <title>Informações Pessoais</title>
+</head>
+<body>
+
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-light color-navbar" id="navbar-menu">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/Alteração Cadastral/img/Branco 150px.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            
+                            <a class="nav-link" aria-current="page" href="/Alteração Cadastral/17 - Geral.html"><i class="bi bi-person-vcard"></i>Geral</a>
+                        </li>
+                        
+                       
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/18 - Endereco.html"><i class="bi bi-pin-map-fill"></i>Endereço</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/19 - Banco.html"><i class="bi bi-bank"></i>Dados Bancários</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/21 - Representantes.html"><i class="bi bi-person-fill-add"></i> Representantes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/23 - Financeiro.html"><i class="bi bi-cash-coin"></i>Financeiro</a>
+                        </li>
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/24 - Fechamento.html"><i class="bi bi-clipboard-check"></i>Fechamento</a>
+                        </li>                       
+                        
+                    </ul>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>User
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/Alteração Cadastral/16 - Meu Cadastro.html">Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Alteração Cadastral/13 - Login.html">Sair</a></li>                          
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    
+    <main>
+        
+           
+
+            <div class="container col-11 col-md-9" id="form-container">              
+                
+
+                <form action="" >
+
+                    <h2>Sócios e Procuradores</h2> 
+                
+                    <div class="progressbar">
+                        <div class="progress" id="progress">
+
+                        </div>
+
+                        <div class="progress-step progress-step-active" data-title="Inf Pessoais"></div>
+                        <div class="progress-step" data-title="Endereço"></div>
+                        <div class="progress-step" data-title="Relação com a empresa"></div>
+                    </div>
+
+                                
+                    
+                    
+                    <div class="form-step form-step-active">
+
+                        <span >Selecione o Perfil</span>
+
+                        <div class="mb-3">                       
+    
+                            <div class="form-check form-check-inline">
+                                <a href="/Alteração Cadastral/22 - Representantes_dados.html"class="form-check-input" type="radio" name="pf_perfil_rep" id="inlineRadio1" value="option1">
+                                </a>
+    
+                                <label class="form-check-label" for="pf_perfil_rep">PF</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="pf_perfil_rep" id="pj_perfil_rep" value="option2" checked>
+                                <label class="form-check-label" for="pj_perfil_rep">PJ</label>
+                            </div>
+                        </div>
+        
+                        <span>Dados da empresa</span>
+
+
+
+                        <div class="row g-3">
+                            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_cnpj_rep" name="cnp" required onkeypress='mask(this,maskcnpj)' onblur='clearTimeout()' 
+                                    placeholder="CPF *" maxlength="18">
+                                    <label for="pj_cnpj_rep" class="form-label">CNPJ *</label>
+                                </div>
+                            </div>
+        
+        
+                            <div class="col-md-3 ">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_fantasia_rep"  placeholder="Orgão.Exp *"required>
+                                    <label for="pj_fantasia_rep" class="form-label">Nome Fantasia *</label>
+                            
+                                </div>
+                            </div>
+        
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_razao_rep" placeholder="Orgão.Exp *"required>
+                                    <label for="pj_razao_rep" class="form-label">Razão Social *</label>
+                            
+                                </div>
+                            </div>
+        
+                            <div class="col-md-3 ">
+                                <div class="form-floating mb-3">                  
+                                    <input type="text" class="form-control" id="pj_email_comercial_rep" placeholder="Nº documento *" required>
+                                    <label for="pj_email_comercial_rep" class="form-label">E-mail *</label>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <label for="pj_ddi_rep" class="form-label "></label>                       
+                                    <select class="form-select "name="ddi" id="pj_ddi_rep" required>
+                                        <option selected disabled>Selecione o DDI *</option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                
+                                
+                            </div>
+            
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <label for="pj_ddd_rep" class="form-label" placeholder=""></label> 
+                                    <select class="form-select "name="ddd" id="pj_ddd_rep" required>
+                                        <option>Selecione o DDD *</option>
+                                        <option></option>
+                                    </select>
+                                </div>                   
+                                
+                                
+                            </div>
+            
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_fone_rep" name="pj_fone_rep" required onkeypress='mask(this,masktel)' 
+                                    onblur='clearTimeout()' placeholder="00000-000" maxlength="10">
+                                    <label for="pj_fone_rep" class="form-label">Fone *</label> 
+                                </div>
+                                
+                            </div>
+            
+                            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_dt_abertura_rep" name="pj_dt_abertura_rep" required onkeypress='mask(this,maskdata)' onblur='clearTimeout()' 
+                                    placeholder="DD/MM/AAAA" maxlength="10">
+                                    <label for="pj_dt_abertura_rep" class="form-label">Data de abertura</label>
+                            
+                                </div>
+                            </div>
+            
+        
+                            <div class="col-md-5">
+                                <div class="form-floating mb-3">
+                                    <label for="pj_atividade_rep" class="form-label"></label> 
+                                    <select class="form-select "name="pj_atividade_rep" id="pj_atividade_rep" placeholder="Atividade" required>
+                                        <option class="opt_label" selected disabled>Atividade *</option>
+                                        <option value="1"></option> 
+                                    </select>
+                                </div>                   
+                                
+                                
+                            </div>
+        
+        
+        
+        
+        
+        
+                            <div>
+        
+                                <span class="span_pf">Envie documentos dos sócios, 
+                                    como contrato social.
+                                </span>
+                                
+                                <p class="p_indentificacao">Obrigatório*</p>
+            
+                            </div>
+        
+        
+                            <div class="upload_arquivos">
+                                <input type="file" id="arquivos_upload" required>
+                                <label for="arquivos_upload">
+                                    <span><i class="bi bi-archive-fill"> Procurar</i></span>
+                                    <span class="text-upload">Selecione o arquivo</span>
+                                </label>
+                            </div>   
+        
+        
+        
+        
+                            <div class="col-12 btn-step">
+                                <a href="#">
+                                    
+                                    <button type="button" class="btn btn-primary btn-next" >
+                                        <i class="bi bi-save2"> Proximo</i>
+                                    </button>
+        
+                                </a>
+                            </div>
+
+                        </div>                    
+
+
+
+                    </div>
+
+
+                    <div class="form-step">
+
+                        <div class="row g-3">
+
+                         
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" onkeypress='mask(this,maskcep)' onblur='clearTimeout()' 
+                                    placeholder="00000-000" maxlength="9" id="pj_cep_rep">
+                                    <label for="pj_cep_rep" class="form-label">CEP *</label>
+                                </div>
+                            </div>
+            
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">     
+                                    <input type="text" class="form-control" id="pj_endereco_rep" placeholder="logradouro" required>
+                                    <label for="pj_endereco_rep" class="form-label">Logradouro *</label>
+                                </div> 
+                                
+                            </div>
+        
+            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_numero_loug_rep" placeholder="numero" required>
+                                    <label for="pj_numero_loug_rep" class="form-label">Numero *</label>
+                                </div>
+                            </div>
+            
+            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_comp_loug_rep" placeholder="complemento" required>
+                                    <label for="pf_comp_loug_rep" class="form-label">Complemento *</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_bairro_rep" placeholder="bairro" required>
+                                    <label for="pf_bairro_rep" class="form-label">Bairro *</label>
+                                </div>
+                            </div>
+        
+            
+                            <div class="col-md-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_uf_rep" placeholder="uf" required>
+                                    <label for="pj_uf_rep" class="form-label">UF *</label>
+                                </div>
+                            </div>
+            
+        
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_cidade_rep" placeholder="cidade" required>
+                                    <label for="pj_cidade_rep" class="form-label">Cidade *</label>
+                                </div>
+                            </div>
+        
+                        
+                            <div class="col-md-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="pj_check_loug_int_rep" required>
+                                    <label class="form-check-label" for="pj_check_loug_int_rep">
+                                      Endereço Internacional?
+                                    </label>
+                                  </div>
+                            
+                            </div>
+        
+                            <div class="col-md-10">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Preenche aqui</label>
+                                  </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-12 btn-step">
+                                
+                                <a href="#">
+                                    <button type="button" class="btn btn-secondary btn-prev">
+                                        <i class="bi bi-arrow-return-left"> Voltar</i>
+                                    </button>
+                                </a>
+            
+                                <a href="#">
+                                    
+                                    <button type="button" class="btn btn-primary btn-next">
+                                        <i class="bi bi-save2"> Próximo</i>
+                                    </button>
+                                </a>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-step">
+                        
+                        <h2>Relação com a empresa</h2> 
+                        
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_porc_rep" required onkeypress='mask(this,maskporcentagem)' onblur='clearTimeout()' placeholder="numero" maxlength="5">
+                                    <label for="pj_porc_rep" class="form-label">Porcentagem(100%) *</label>
+                                </div>
+                            </div>
+        
+                           
+                        
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pj_patrimonio_rep"  placeholder="R$0,00" required onInput="mascaraMoeda(event);">
+                                    <label for="pj_patrimonio_rep" class="form-label">Patrimonio *</label>
+                                </div>
+                            </div>
+
+                        </div>
+    
+                        
+                        
+                        <div class="col-12 btn-step">
+                            
+                            <a href="#">
+                                <button type="button" class="btn btn-secondary btn-prev">
+                                    <i class="bi bi-arrow-return-left"> Voltar</i>
+                                </button>
+                            </a>
+        
+                            
+                                
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal">
+                                <i class="bi bi-save2"> Salvar</i>
+                            </button>
+                        
+                            
+                            <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Finalizar o Cadastro</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+        
+                                        <div class="modal-body">
+                                            Deseja salvar os dados ?
+                                        </div>
+        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+        
+                                            <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#modal2">Salvar</button>
+        
+                                            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Cadastro efetuado com sucesso</h5>
+                                                            
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        <img class= "img-cad-sucess" src="/Alteração Cadastral/img/cad-sucess.png" alt="">
+                                                        </div>
+                                                        
+                                                        <div class="modal-footer">
+    
+                                                            <a href="/Alteração Cadastral/21 - Representantes.html" onclick="alterarStatusPJ4()">
+                                                                <button type="button" class="btn btn-secondary">
+                                                                 Voltar
+                                                                </button>
+                                                            </a>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </form>  
+    
+            </div>
+                    
+            
+        
+                
+        
+    </main>
+    
+    <script>
+        // Função para alterar o status da página A
+        function alterarStatusPJ4() {
+            // Define o novo status como "Concluído"
+            var novoStatusPJ4 = "Status: Concluido";
+            
+            // Armazena o novo status localmente
+            localStorage.setItem('status-representantes-pj', novoStatusPJ4);
+
+            // Redireciona para a página A para que o status seja atualizado
+            //window.location.href = 'paginaA.html';
+        }
+    </script>
+
+    <footer>
+
+        <p>&copy;By Grupo Guitta </p>
+
+    </footer>
+    
+</body>
+</html>

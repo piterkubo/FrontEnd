@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- JS boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+
+    <!-- Boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+
+
+    <!-- Javascript -->
+    <script src="/Alteração Cadastral/jsPJ/mask.cpf.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_data.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_estado_cidade_pj.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_estado_cidade_pj2.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/pais.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/pais2.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/progressbar.js"defer></script> 
+    <script src="/Alteração Cadastral/jsPJ/upload-arquivos.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/api_cep_pj.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_cep.js" defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask.moeda.js"defer></script>
+    <script src="/Alteração Cadastral/jsPJ/mask_porcentagem.js"></script>
+   
+    
+
+    
+
+    <!-- css -->
+    <link rel="stylesheet" href="/Alteração Cadastral/css/style.css">
+    <title>Informações Pessoais</title>
+</head>
+<body>
+
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-light color-navbar" id="navbar-menu">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/Alteração Cadastral/img/Branco 150px.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            
+                            <a class="nav-link" aria-current="page" href="/Alteração Cadastral/17 - Geral.html"><i class="bi bi-person-vcard"></i>Geral</a>
+                        </li>
+                        
+                       
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/18 - Endereco.html"><i class="bi bi-pin-map-fill"></i>Endereço</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/19 - Banco.html"><i class="bi bi-bank"></i>Dados Bancários</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/21 - Representantes.html"><i class="bi bi-person-fill-add"></i> Representantes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/23 - Financeiro.html"><i class="bi bi-cash-coin"></i>Financeiro</a>
+                        </li>
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Alteração Cadastral/24 - Fechamento.html"><i class="bi bi-clipboard-check"></i>Fechamento</a>
+                        </li>                       
+                        
+                    </ul>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>User
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/Alteração Cadastral/16 - Meu Cadastro.html">Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Alteração Cadastral/13 - Login.html">Sair</a></li>                          
+                            </ul>
+                        </li>
+                    </ul>
+                
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    
+    <main>
+        
+           
+
+            <div class="container col-11 col-md-9" id="form-container">
+               
+                <h2>Sócios e Procuradores</h2>        
+                
+                <form action="" class="form-radio">
+
+                    <div class="progressbar">
+                        <div class="progress" id="progress"></div>
+                        
+                        <div class="progress-step progress-step-active" data-title="Inf Pessoais"></div>
+                        <div class="progress-step" data-title="Documentação"></div>
+                        <div class="progress-step" data-title="Endereço"></div>
+                        <div class="progress-step" data-title="Relação com a empresa"></div>
+                    </div>
+                   
+
+                    <div class="form-step form-step-active">
+                        <span >Selecione o Perfil</span>
+                        
+                        <div class="mb-3">                       
+        
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="socio_pf_perfil" value="option1" checked>
+                                <label class="form-check-label" for="socio_pf_perfil">PF</label>
+                            </div>
+                                
+                            <div class="form-check form-check-inline">
+                                
+                                <a href="/Alteração Cadastral/22.01 - Representantes_dados_PJ.html" class="form-check-input" type="radio" name="inlineRadioOptions" id="socio_pj_perfil" value="option2">
+                                    
+                                </a>
+
+                                <label class="form-check-label" for="socio_pj_perfil">PJ</label>
+                            </div>
+                        </div>
+        
+                        <span >Dados da Empresa</span>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_cpf_rep" name="pf_cpf" required onkeypress='mask(this,maskcpf)' onblur='clearTimeout()' 
+                                    placeholder="CPF *" maxlength="14">
+                                    <label for="pf_cpf_rep" class="form-label">CPF *    </label>
+                                </div>
+                            </div>
+            
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_name_rep" name="pj_name_rep" placeholder="Nome" required>
+                                    <label for="pf_name_rep" class="form-label">Nome *</label>
+                                </div>
+            
+                            </div>
+            
+            
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_lastname_rep" name="lastname" placeholder="Sobrenome" required>
+                                    <label for="pf_lastname_rep" class="form-label">Sobrenome *</label>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_dt_nascimento_rep" name="pj_dt_nascimento_rep" required onkeypress='mask(this,maskdata)' onblur='clearTimeout()' 
+                                    placeholder="dd/mm/aaaa" maxlength="10">
+                                    <label for="pf_dt_nascimento_rep" class="form-label">Data de Nascimento *</label>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <label for="pj_uf_rep1" class="form-label"> </label>
+                                    <select class="form-select" name="pf_uf_rep1" id="pf_uf_rep1" placeholder="" required>                    
+                                        <option selected disabled>UF emissor *</option>
+                                        <option></option>                    
+                
+                                    </select>
+                                </div>
+                
+                            </div>
+                
+                
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <label for="pf_cidade_rep1" class="form-label"></label>
+                                    <select class="form-select opt_label" name="pf_cidade_rep1" id="pj_cidade_rep1" required>                    
+                                        <option selected disabled>Cidade *</option>
+                                        <option></option>                    
+                
+                                    </select>
+                                </div>    
+                            </div>
+            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <label for="pf_pais_rep" class="form-label"></label>
+                                    <select class="form-select" name="pj_pais" id="pf_pais_rep" placeholder="pais" required>
+                                        <option class="opt_label" selected disabled>Pais *</option>
+                                        <option value="1"></option>                        
+                    
+                                    </select>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_nome_mae_rep" placeholder="Nome da mãe" required>
+                                    <label for="pf_nome_mae_rep" class="form-label">Nome completo da mãe *</label>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="pf_email_rep" name="email" placeholder="E-mail" required>
+                                    <label for="pf_email_rep" class="form-label">Seu E-mail</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                
+                                <div class="col-12 btn-step">
+
+                                    <a href="/Alteração Cadastral/21 - Representantes.html">
+                                        <button type="button" class="btn btn-secondary">
+                                            <i class="bi bi-arrow-return-left"> Voltar</i>
+                                        </button>
+                                    </a>
+
+
+                                    <a href="#">
+                                        
+                                        <button type="button" class="btn btn-primary btn-next" >
+                                            <i class="bi bi-save2"> Proximo</i>
+                                        </button>
+            
+                                    </a>
+                                </div>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-step">
+                        <h2>Documentação</h2> 
+
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+                        
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_rg_rep" name="name" placeholder="Nome" required>
+                                    <label for="pf_rg_rep" class="form-label">RG *</label>
+                                </div>
+            
+                            </div>
+            
+            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_dt_nascimento_rep" name="pj_dt_nascimento_rep" required onkeypress='mask(this,maskdata)' onblur='clearTimeout()' 
+                                    placeholder="dd/mm/aaaa" maxlength="10">
+                                    <label for="pf_dt_nascimento_rep" class="form-label">Data de Emissão *</label>
+                                </div>
+                            </div>
+            
+
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_orgao_emissor_rep" placeholder="Nome da mãe" required>
+                                    <label for="pf_orgao_emissor_rep" class="form-label">Orgão emissor RG *</label>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <label for="pf_uf_rep2" class="form-label"> </label>
+                                    <select class="form-select" name="pj_uf_rep2" id="pf_uf_rep2" placeholder="" >                    
+                                        <option selected disabled>UF emissor *</option>
+                                        <option></option>                    
+                
+                                    </select>
+                                </div>
+                
+                            </div>
+                
+                
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <label for="pf_cidade_rep2" class="form-label"></label>
+                                    <select class="form-select opt_label" name="pf_cidade_rep2" id="pj_cidade_rep2">                    
+                                        <option selected disabled>Cidade *</option>
+                                        <option></option>                    
+                
+                                    </select>
+                                </div>    
+                            </div>
+                            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <label for="pf_pais2" class="form-label"></label>
+                                    <select class="form-select" name="pj_pais2" id="pf_pais2" placeholder="pais">
+                                        <option class="opt_label" selected disabled>Pais *</option>
+                                        <option value="1"></option>                        
+                    
+                                    </select>
+                                </div>
+                            </div>
+
+                            
+            
+            
+                            
+            
+                            <span>Documento de indentificação do sócio (RG,CNH ou Passaporte)</span>
+        
+                            <div class="upload_arquivos">
+                                
+                                <input type="file" id="arquivos_upload" required>
+                                <label for="arquivos_upload">
+                                    <span><i class="bi bi-archive-fill"> Procurar</i></span>
+                                    <span class="text-upload">Selecione o arquivo</span>
+                                </label>
+                                
+                            </div>
+        
+                            <p>Formatos JPG, PNG ou PDF, arquivo com tamanho maximo de 7mb.</p>
+        
+                            
+                            
+                            
+                            <div class="col-12 btn-step">
+                                
+                                <a href="#">
+                                    <button type="button" class="btn btn-secondary btn-prev">
+                                        <i class="bi bi-arrow-return-left"> Voltar</i>
+                                    </button>
+                                </a>
+            
+                                <a href="#">
+                                    
+                                    <button type="button" class="btn btn-primary btn-next">
+                                        <i class="bi bi-save2"> Próximo</i>
+                                    </button>
+                                </a>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    
+
+
+                    <div class="form-step">
+                        
+                        <h2>Complemento</h2> 
+                        
+                        <div class="row g-3">
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" required onkeypress='mask(this,maskcep)' onblur='clearTimeout()' 
+                                    placeholder="00000-000" maxlength="9" id="pf_cep_rep">
+                                    <label for="pf_cep_rep" class="form-label">CEP *</label>
+                                </div>
+                            </div>
+            
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">     
+                                    <input type="text" class="form-control" id="pf_logradouro_rep" placeholder="logradouro" required>
+                                    <label for="pf_logradouro_rep" class="form-label">Logradouro *</label>
+                                </div> 
+                                
+                            </div>
+        
+            
+                            <div class="col-md-2">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_numero_loug_rep" placeholder="numero" required>
+                                    <label for="pf_numero_loug_rep" class="form-label">Numero *</label>
+                                </div>
+                            </div>
+            
+            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_end_complemento_rep" placeholder="complemento" required>
+                                    <label for="pf_end_complemento_rep" class="form-label">Complemento *</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_bairro_rep" placeholder="bairro" required>
+                                    <label for="f" class_rep="form-label">Bairro *</label>
+                                </div>
+                            </div>
+        
+            
+                            <div class="col-md-1">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_up_rep" placeholder="uf" required>
+                                    <label for="pf_up_rep" class="form-label">UF *</label>
+                                </div>
+                            </div>
+            
+        
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_cidade_rep" placeholder="cidade" required>
+                                    <label for="pf_cidade_rep" class="form-label">Cidade *</label>
+                                </div>
+                            </div>
+        
+        
+                            <div class="col-md-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Endereço Internacional?
+                                    </label>
+                                  </div>
+                            
+                            </div>
+        
+                            <div class="col-md-10">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Preenche aqui</label>
+                                  </div>
+                            </div>
+
+                        </div>
+    
+                        
+                        
+                        <div class="col-12 btn-step">
+                            
+                            <a href="#">
+                                <button type="button" class="btn btn-secondary btn-prev">
+                                    <i class="bi bi-arrow-return-left"> Voltar</i>
+                                </button>
+                            </a>
+        
+                            <a href="#">
+                                
+                                <button type="button" class="btn btn-primary btn-next">
+                                    <i class="bi bi-save2"> Próximo</i>
+                                </button>
+                            </a>                           
+                        
+                        </div>
+                    </div>
+
+
+                    
+
+
+                    <div class="form-step">
+                        
+                        <h2>Relação com a empresa</h2> 
+                        
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">     
+                                    <input type="text" class="form-control" id="pf_cargo_rep" placeholder="logradouro" required>
+                                    <label for="pf_cargo_rep" class="form-label">Cargo *</label>
+                                </div> 
+                                
+                            </div>
+        
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_porcentagem_rep" required onkeypress='mask(this,maskporcentagem)' onblur='clearTimeout()' placeholder="numero" maxlength="5">
+                                    <label for="pf_porcentagem_rep" class="form-label">Porcentagem(100%) *</label>
+                                </div>
+                            </div>
+            
+            
+                            <div class="col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_renda_rep" placeholder="R$0,00" required onInput="mascaraMoeda(event);">
+                                    <label for="pf_renda_rep" class="form-label">Renda *</label>
+                                </div>
+                            </div>
+        
+        
+                            
+                            
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="pf_patrimonio_rep"placeholder="R$0,00" required onInput="mascaraMoeda(event);">
+                                    <label for="pf_patrimonio_rep" class="form-label">Patrimonio *</label>
+                                </div>
+                            </div>
+        
+        
+        
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="pf_exp_produto" id="pf_exp_rep" required>
+                                <label class="form-check-label" for="pf_exp_rep">
+                                Exportação
+                                </label>
+                            </div>
+        
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="pf_imp_produto" id="pf_imp_rep" required>
+                                <label class="form-check-label" for="pf_imp_rep">
+                                Importação
+                                </label>
+                            </div>
+        
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="pf_env_dinheiro" id="pf_env_dinheiro_rep" required>
+                                <label class="form-check-label" for="pf_env_dinheiro_rep">
+                                Envio de dinheiro
+                                </label>
+                            </div>
+        
+        
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="pf_rec_dinheiro" id="pf_rec_dinheiro_rep" required>
+                                <label class="form-check-label" for="pf_rec_dinheiro_rep">
+                                    Recebimento de dinheiro
+                                </label>
+                            </div>
+        
+                            <span>O corresponde as informações abaixo?</span> 
+                              
+                              
+                            <div class="mb-3">
+                                
+                                <input type="checkbox" class="form-check-input" value="" id="pf_check_pep_rep" name="agree-form">
+                                <label for="pf_check_pep_rep" class="form-check-label">
+                                    Sou Pep                                             
+                                </label>
+                                
+                                <i class="bi bi-info-circle icons-reg" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Pessoa Exposta Politicamente(PEP)</h5>
+                                                                                                                
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <p class="p_modal">Pessoa exposta politicamente é aquela que desempenha ou tenha desempenhado, nos últimos cinco (5) anos,
+                                                        cargos, empregos ou funções públicas relevantes, no Brasil ou em outros países, territórios e dependências 
+                                                        estrangeiros, assim como seus representantes, familiares e outras pessoas de seu relacionamento próximo. São considerados familiares e parentes, 
+                                                        na linha direta, até o primeiro grau e ainda o cônjuge, o companheiro (a), o enteado (a). São considerados pessoas de relacionamento próximo, sócios, 
+                                                        procuradores e pessoas com quem mantenha relacionamento de negócios em caráter contínuo.</p>
+        
+                                                    <p class="p_modal_2">
+                                                        Em entendimento a Circular 3.461 do BACEN que dispõe sobre Pessoas Expostas Politicamente, ou seja, candidatos eleitos a cargos 
+                                                        públicos nos últimos 5 anos ou conforme denominações acima, declaro que:
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>                                       
+                            </div>
+        
+        
+        
+                            <div class="mb-3">
+                                
+                                <input type="checkbox" class="form-check-input" value="" id="pf_check_pep_rep" name="agree-form">
+                                <label for="pf_check_pep_rep" class="form-check-label">
+                                Declara IR no exterior                                               
+                                </label>                        
+                                
+                            </div>
+
+                        </div>
+    
+                        
+                        
+                        <div class="col-12 btn-step">
+                            
+                            <a href="#">
+                                <button type="button" class="btn btn-secondary btn-prev">
+                                    <i class="bi bi-arrow-return-left"> Voltar</i>
+                                </button>
+                            </a>
+        
+                            
+                                
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal">
+                                <i class="bi bi-save2"> Salvar</i>
+                            </button>
+                        
+                            
+                            <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Finalizar o Cadastro</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+        
+                                        <div class="modal-body">
+                                            Deseja salvar os dados ?
+                                        </div>
+        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+        
+                                            <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#modal2">Salvar</button>
+                                            
+                                            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            
+                                                            <h5 class="modal-title" id="exampleModalLabel">Cadastro efetuado com sucesso</h5>
+                                                            
+                                                            
+                                                        </div>
+                                                        
+                                                        <div class="modal-body">
+                                                        <img class= "img-cad-sucess" src="/Alteração Cadastral/img/cad-sucess.png" alt="">
+                                                        </div>
+                                                        
+                                                        <div class="modal-footer">
+    
+                                                            <a href="/Alteração Cadastral/21 - Representantes.html" id="mostrar-ocultar" onclick="alterarStatusPJ4()">
+                                                                <button type="button" class="btn btn-secondary" onclick="enviarDadosRepr(event)">
+                                                                 Voltar
+                                                                </button>
+                                                            </a>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+    
+                </form>  
+    
+            </div>
+        
+    </main>
+
+    
+
+    <script>
+        // Função para alterar o status da página A
+        function alterarStatusPJ4() {
+            // Define o novo status como "Concluído"
+            var novoStatusPJ4 = "Status: Concluido";
+            
+            // Armazena o novo status localmente
+            localStorage.setItem('status-representantes-pj', novoStatusPJ4);
+
+            // Redireciona para a página A para que o status seja atualizado
+            //window.location.href = 'paginaA.html';
+        }
+    </script>
+
+
+    <footer>
+
+        <p>&copy;By Grupo Guitta </p>
+
+    </footer>
+    
+</body>
+</html>
